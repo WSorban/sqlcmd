@@ -12,5 +12,6 @@ At least one query
 
 ### Example usage:
 `sql.exe user=test password=test host=localhost database=test port=5432 query="SELECT * FROM test"`
+
 `node sql.js user=test password=test host=localhost database=test port=5432 query="SELECT * FROM test" query="SELECT * FROM test"`
 
