@@ -2,10 +2,15 @@
 
 ### Expected arguments:
 user*
+
 password*
+
 host*
+
 database*
+
 port*
+
 At least one query
 
 * Mandatory fields
