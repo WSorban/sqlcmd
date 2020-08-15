@@ -20,14 +20,17 @@ const validArguments =
 
 const args = {};
 const queries = [];
+
 myArgs.forEach(arg => {
-  const keyValue = arg.split('=');
+  const keyValue = arg.split(/=(.+)/);
   if (keyValue[0] !== 'query') {
     args[keyValue[0]] = keyValue[1];
   } else {
     queries.push(keyValue[1]);
   }
 })
+
+console.log(queries);
 
 if(!args.user || !args.password || !args.host || !args.database || !args.port || !queries.length) {
   console.error("Invalid arguments");
@@ -46,6 +49,6 @@ queries.forEach(async query => {
     if (err) {
       console.error(err);
     }
-    console.info('Successfully executed query', query, res.rows);
+    console.info('Successfully executed query', query, res ? res.rows : '');
   });
 })
